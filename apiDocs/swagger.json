@@ -1,0 +1,228 @@
+{
+    "basePath": "/",
+    "paths": {
+        "/contracts": {
+            "get": {
+                "description": "Get all not terminated contracts",
+                "operationId": "Get contracts",
+                "parameters": [
+                    {
+                        "default": 1,
+                        "example": 1,
+                        "in": "query",
+                        "minimum": 1,
+                        "name": "page",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "default": 10,
+                        "example": 10,
+                        "in": "query",
+                        "minimum": 1,
+                        "name": "limit",
+                        "type": "integer"
+                    },
+                    {
+                        "default": "DESC",
+                        "example": "DESC",
+                        "in": "query",
+                        "name": "orderBy",
+                        "type": "string"
+                    },
+                    {
+                        "default": "createdAt",
+                        "example": "createdAt",
+                        "in": "query",
+                        "name": "sortBy",
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid Arguments"
+                    },
+                    "401": {
+                        "description": "Unauthorised"
+                    },
+                    "404": {
+                        "description": "Data not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "tags": [
+                    "Contracts"
+                ]
+            }
+        },
+        "/contracts/{id}": {
+            "get": {
+                "description": "Get contracts by id",
+                "operationId": "Get contracts by id",
+                "parameters": [
+                    {
+                        "default": 1,
+                        "example": 1,
+                        "in": "query",
+                        "minimum": 1,
+                        "name": "page",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "default": 1,
+                        "example": 1,
+                        "in": "path",
+                        "minimum": 1,
+                        "name": "id",
+                        "type": "integer"
+                    },
+                    {
+                        "default": 10,
+                        "example": 10,
+                        "in": "query",
+                        "minimum": 1,
+                        "name": "limit",
+                        "type": "integer"
+                    },
+                    {
+                        "default": "DESC",
+                        "example": "DESC",
+                        "in": "query",
+                        "name": "orderBy",
+                        "type": "string"
+                    },
+                    {
+                        "default": "createdAt",
+                        "example": "createdAt",
+                        "in": "query",
+                        "name": "sortBy",
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid Arguments"
+                    },
+                    "401": {
+                        "description": "Unauthorised"
+                    },
+                    "404": {
+                        "description": "Data not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "tags": [
+                    "Contracts"
+                ]
+            }
+        },
+        "/jobs/unpaid": {
+            "get": {
+                "description": "Get unpaid jobs for give profile",
+                "operationId": "Get unpaid jobs for give profile",
+                "parameters": [
+                    {
+                        "default": 1,
+                        "example": 1,
+                        "in": "query",
+                        "minimum": 1,
+                        "name": "page",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "default": 1,
+                        "example": 1,
+                        "in": "path",
+                        "minimum": 1,
+                        "name": "id",
+                        "type": "integer"
+                    },
+                    {
+                        "default": 10,
+                        "example": 10,
+                        "in": "query",
+                        "minimum": 1,
+                        "name": "limit",
+                        "type": "integer"
+                    },
+                    {
+                        "default": "DESC",
+                        "example": "DESC",
+                        "in": "query",
+                        "name": "orderBy",
+                        "type": "string"
+                    },
+                    {
+                        "default": "createdAt",
+                        "example": "createdAt",
+                        "in": "query",
+                        "name": "sortBy",
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid Arguments"
+                    },
+                    "401": {
+                        "description": "Unauthorised"
+                    },
+                    "404": {
+                        "description": "Data not found"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "tags": [
+                    "Jobs"
+                ]
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "profile_id"
+        }
+    },
+    "swagger": "2.0",
+    "info": {
+        "title": "Contracts",
+        "version": "1.0.0"
+    }
+}
